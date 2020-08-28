@@ -78,4 +78,7 @@ body {
         display: flex;
         flex-direction: column;
     }
+    .msg{
+        top: 30%;
+    }
  }
