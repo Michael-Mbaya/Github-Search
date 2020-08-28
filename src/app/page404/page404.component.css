@@ -1,5 +1,7 @@
 body {
     background-color: #95c2de;
+    height: 100%;
+    width: 100%;
   }
   
   .mainbox {
@@ -54,3 +56,26 @@ body {
   a:hover {
     text-decoration: underline;
   }
+
+  @media only screen and (max-width: 600px) {
+    .err {
+      position: relative;
+      left: none;
+      top: none;
+
+    }
+    .far{
+        position: relative;
+        left: none;
+        top: none;
+    }
+    .err2{
+        position: relative;
+        left: none;
+        top: none;
+    }
+    .four{
+        display: flex;
+        flex-direction: column;
+    }
+ }
