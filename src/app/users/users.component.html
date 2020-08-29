@@ -1,1 +1,70 @@
-<p>users works!</p>
+<!-- <p>users works!</p> -->
+<div class="bg-light w-100 h-100 px-3 mx-0">
+  <div class="container-fluid" *ngIf="!profile">
+    <div class="jumbotron jumbotron-fluid bg-transparent">
+      <div class="container text-center">
+        <h1 class="display-4">Loading</h1>
+        <p class="lead font-weight-bold"><i class="fas fa-spinner fa-pulse"></i></p>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid py-3">
+    <div class="row" *ngIf="profile">
+      <div class="lefty align-self-center">
+        <div class="card">
+          <div class="card-header">
+            <img src="{{profile.avatar_url}}" alt="User Avatar" class="w-100 rounded-circle">
+          </div>
+          <h4 class="bg-light py-2 my-0">{{profile.login}}</h4>
+          <p *ngIf="profile.email" class="lead my-0 py-1"><a href="emailto:{{profile.email}}" target="_blank"
+              rel="noopener noreferrer"></a>{{profile.email}}</p>
+          <p *ngIf="profile.blog" class="lead my-0 py-1"><a href="{{profile.blog}}" target="_blank"></a>{{profile.blog}}
+          </p>
+        </div>
+      </div>
+      <div class="righty row">
+        <div class="w-100">
+          <div class="card-header lead bg-dark text-white row justify-content-around">
+            <div class="text-center">
+              <p>{{profile.followers}}</p>
+              <p>Followers</p>
+            </div>
+            <div class="text-center">
+              <p>{{profile.following}}</p>
+              <p>Following</p>
+            </div>
+            <div class="text-center">
+              <p>{{profile.public_gists}}</p>
+              <p>Public Gists</p>
+            </div>
+            <div class="text-center">
+              <p>{{profile.public_repos}}</p>
+              <p>Public Repos</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-text">
+              <p *ngIf="profile.company" class="lead my-0 py-1">{{profile.company}}</p>
+              <p *ngIf="profile.bio" class="lead my-0 py-1">{{profile.bio}}</p>
+              <p *ngIf="profile.hireable" class="lead my-0 py-1">Available for Hire</p>
+              <p class="lead my-0 py-1"><i class="fa fa-map-marker text-danger mr-2"
+                  aria-hidden="true"></i>{{profile.location}}</p>
+              <p *ngIf="profile.twitter_username" class="lead my-0 py-1"><i class="fa fa-twitter text-primary mr-2"
+                  aria-hidden="true"></i>@{{profile.twitter_username}}</p>
+            </div>
+            <a href="{{profile.html_url}}" target="_blank" class="btn btn-primary">Go to Profile</a>
+          </div>
+          <div class="card-footer lead bg-dark text-white" *ngIf="profile.created_at">
+            <span class="px-2">Created On: <i>{{profile.created_at|date}}</i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="container-fluid w-100">
+    <div class="card-header">Header</div>
+    <div class="card-body">Content</div>
+    <div class="card-footer">Footer</div>
+  </div>
+</div>
