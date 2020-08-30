@@ -8,26 +8,26 @@ import "rxjs";
 })
 export class UserServiceService {
 
-private userName:string;
-private clientID = environment.clientID;
-private clientSecret = environment.clientSecret;
-private key = environment.apiKey;
+  private userName: string;
+  private clientID = environment.clientID;
+  private clientSecret = environment.clientSecret;
+  private key = environment.apiKey;
 
-  constructor(private http:HttpClient) {
+  constructor(private http: HttpClient) {
     console.log("service up and go!!!");
     this.userName = '';
-   }
+  }
 
-   getUserInfo(){
-    return this.http.get("https://api.github.com/users/"+this.userName+"?client_id="+
-    this.clientID+"&client_secret="+this.clientSecret)
+  getUserInfo() {
+    return this.http.get("https://api.github.com/users/" + this.userName + "?client_id=" +
+      this.clientID + "&client_secret=" + this.clientSecret)
     // return this.http.get("https://api.github.com/users/"+this.userName+"?client_id="+
     // this.key)
   }
 
-  getUserRepos(){
-    return this.http.get("https://api.github.com/users/"+this.userName+"/repos?client_id="+
-    this.clientID+"&client_secret="+this.clientSecret)
+  getUserRepos() {
+    return this.http.get("https://api.github.com/users/" + this.userName + "/repos?client_id=" +
+      this.clientID + "&client_secret=" + this.clientSecret)
     // return this.http.get("https://api.github.com/users/"+this.userName+"/repos?client_id="+
     // this.key)
   }
