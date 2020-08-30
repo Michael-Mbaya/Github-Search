@@ -1,27 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import{ RepoServiceService } from '../repo-service.service';
+// import { Component, OnInit } from '@angular/core';
+// // import{ RepoServiceService } from '../repo-service.service';
 
-@Component({
-  selector: 'app-repos',
-  templateUrl: './repos.component.html',
-  styleUrls: ['./repos.component.css']
-})
-export class ReposComponent implements OnInit {
+// @Component({
+//   selector: 'app-repos',
+//   templateUrl: './repos.component.html',
+//   styleUrls: ['./repos.component.css']
+// })
+// export class ReposComponent implements OnInit {
 
-  repos:any;
-  searchRepo:string;
+//   repos:any;
+//   searchRepo:string;
 
-  constructor(private repoService:RepoServiceService) {
-    this.repoService.getRepos().subscribe(reposResult => {
-      console.log(reposResult);
-      this.repos = reposResult;
-   });
+//   constructor(private repoService:RepoServiceService) {
+//     this.repoService.getRepos().subscribe(reposResult => {
+//       console.log(reposResult);
+//       this.repos = reposResult;
+//    });
 
    
 
-  }
+//   }
 
-  ngOnInit(): void {
-  }
+//   ngOnInit(): void {
+//   }
 
-}
+// }
