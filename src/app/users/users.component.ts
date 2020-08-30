@@ -9,16 +9,24 @@ import { UserServiceService } from '../user-service.service';
 export class UsersComponent implements OnInit {
 
   profile;
+  repos;
+  searchname;
 
   constructor(private userService:UserServiceService) {
+    
     this.userService.getUserInfo().subscribe(profileResult => {
       console.log(profileResult);
       this.profile = profileResult;
     });
-    
-   }
 
-  ngOnInit(): void {
+    this.userService.getUserRepos().subscribe(profileReposResult => {
+      console.log(profileReposResult);
+      this.repos = profileReposResult;
+
+   });
+
+
+}
+  ngOnInit() {
   }
-
 }

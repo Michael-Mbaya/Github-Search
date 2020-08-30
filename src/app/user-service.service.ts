@@ -26,14 +26,13 @@ private key = environment.apiKey;
     // this.clientID+"&client_secret="+this.clientSecret)
     return this.http.get("https://api.github.com/users/"+this.userName+"?client_id="+
     this.key)
-    // .map(res => res.json())
-    // .subscribe(data=>{
-    //   // Succesful API request
-    //   // this.quote = new Quote(data.author, data.quote)
-    // },err=>{
-    //     // this.quote = new Quote("Winston Churchill","Never never give up!")
-    //     console.log("An error occurred")
-    // })
+  }
+
+  getUserRepos(){
+    // return this.http.get("https://api.github.com/users/"+this.userName+"?client_id="+
+    // this.clientID+"&client_secret="+this.clientSecret)
+    return this.http.get("https://api.github.com/users/"+this.userName+"/repos?client_id="+
+    this.key)
   }
 
 }
