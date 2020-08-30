@@ -19,17 +19,17 @@ export class UserServiceService {
   }
 
   getUserInfo() {
-    return this.http.get("https://api.github.com/users/" + this.userName + "?client_id=" +
-      this.clientID + "&client_secret=" + this.clientSecret)
-  //   return this.http.get("https://api.github.com/users/"+this.userName+"?client_id="+
-  //   this.key)
+    // return this.http.get("https://api.github.com/users/" + this.userName + "?client_id=" +
+    //   this.clientID + "&client_secret=" + this.clientSecret)
+    return this.http.get("https://api.github.com/users/"+this.userName+"?client_id="+
+    this.key)
   }
 
   getUserRepos() {
-    return this.http.get("https://api.github.com/users/" + this.userName + "/repos?client_id=" +
-      this.clientID + "&client_secret=" + this.clientSecret)
-    // return this.http.get("https://api.github.com/users/"+this.userName+"/repos?client_id="+
-    // this.key)
+    // return this.http.get("https://api.github.com/users/" + this.userName + "/repos?client_id=" +
+    //   this.clientID + "&client_secret=" + this.clientSecret)
+    return this.http.get("https://api.github.com/users/"+this.userName+"/repos?client_id="+
+    this.key)
   }
 
   searchUsername(username: any) {
