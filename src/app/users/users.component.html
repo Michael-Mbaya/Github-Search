@@ -102,9 +102,9 @@
     </div>
 
     <div class="container-fluid d-flex flex-wrap justify-content-center">
-      <div class="col-md-3 card-deck my-1 mx-0 px-0" *ngFor="let repo of repos">
+      <div class="col-md-3 card-deck p-2 mx-0 px-0" *ngFor="let repo of repos">
 
-        <div class=" card w-100 h-100">
+        <div class=" card w-100 h-100 m-2">
           <div class="card-header">{{repo.name}}</div>
           <div *ngIf="repo.description" class="card-body row justify-content-center align-items-center">
             {{repo.description}}</div>
