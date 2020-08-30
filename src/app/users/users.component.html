@@ -31,7 +31,7 @@
   <div class="container-fluid py-3">
 
     <div class="row" *ngIf="profile">
-      <div class="lefty align-self-center">
+      <div class="lefty align-self-center col-md-4">
         <div class="card">
           <div class="card-header">
             <img src="{{profile.avatar_url}}" alt="User Avatar" class="w-100 rounded-circle">
@@ -43,9 +43,9 @@
           </p>
         </div>
       </div>
-      <div class="righty row">
+      <div class="righty row col-md-8">
         <div class="w-100">
-          <div class="card-header lead bg-dark text-white row justify-content-around">
+          <div class="card-header lead bg-dark text-white row flex-wrap justify-content-around">
             <div class="text-center">
               <p>{{profile.followers}}</p>
               <p>Followers</p>
@@ -65,10 +65,10 @@
           </div>
           <div class="card-body">
             <div class="card-text">
-              <p *ngIf="profile.company" class="lead my-0 py-1">{{profile.company}}</p>
-              <p *ngIf="profile.bio" class="lead my-0 py-1">{{profile.bio}}</p>
-              <p *ngIf="profile.hireable" class="lead my-0 py-1">Available for Hire</p>
-              <p *ngIf="profile.location" class="lead my-0 py-1"><i class="fa fa-map-marker text-danger mr-2"
+              <p *ngIf="profile.company" class="lead my-0 p-1">Work <span class="p-1">{{profile.company}}</span></p>
+              <p *ngIf="profile.bio" class="lead my-0 p-1">Profile Bio: <span class="p-1">{{profile.bio}}</span></p>
+              <p *ngIf="profile.hireable" class="lead my-0 p-1">Available for Hire</p>
+              <p *ngIf="profile.location" class="lead my-0 p-1"><i class="fa fa-map-marker text-danger mr-2"
                   aria-hidden="true"></i>{{profile.location}}</p>
               <p *ngIf="profile.twitter_username" class="lead my-0 py-1"><i class="fa fa-twitter text-primary mr-2"
                   aria-hidden="true"></i>@{{profile.twitter_username}}</p>
