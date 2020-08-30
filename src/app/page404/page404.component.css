@@ -82,3 +82,6 @@ body {
         top: 30%;
     }
  }
+ div{
+  overflow: hidden;
+}

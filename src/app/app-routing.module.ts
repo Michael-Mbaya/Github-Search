@@ -7,7 +7,7 @@ import { AboutComponent } from './about/about.component'
 
 const routes: Routes = [
   { path: 'users', component: UsersComponent},
-  { path: 'repos', component: ReposComponent},
+  // { path: 'repos', component: ReposComponent},
   {path: 'about', component: AboutComponent},
   { path:'**', component:Page404Component},
       //redirect

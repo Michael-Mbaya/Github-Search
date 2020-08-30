@@ -5,3 +5,7 @@
 i{
     font-size: 25px;
 }
+
+div{
+    overflow: hidden;
+}

@@ -1,21 +1,24 @@
 <div class="bg-light w-100 h-100 px-3 mx-0">
 
-  <form action="" class="pt-3">
+  <form (ngSubmit)="search()" class="pt-3">
     <div class="form-group">
       <input type="text" class=" form-control" placeholder="Search GitHub by username" 
         [(ngModel)]="searchname" name="searchname">
     </div>
     <div class="d-flex justify-content-center">
-      <button class="btn btn-info w-25" value="submit" type="submit" (click)="search()">
-        <i class="fa fa-search mx-2" aria-hidden="true"></i>Search</button>
+      <button class="btn btn-success w-25" value="submit" type="submit">
+        <i class="fa fa-search mx-2 font-weight-bold" aria-hidden="true"></i>Search
+      </button>
     </div>
   </form>
 
   <div class="container-fluid" *ngIf="!profile">
     <div class="jumbotron jumbotron-fluid bg-transparent">
       <div class="container text-center">
-        <h1 class="display-4">Loading</h1>
-        <p class="lead font-weight-bold"><i class="fa fa-spinner fa-pulse"></i></p>
+        <h2>Please enter an existing Github User's name and click Enter or the Search button to see relevant Results</h2>
+        <h2>Alternatively, Check your Connection and Try again Please</h2>
+        <p class="lead font-weight-bold"><i class="fa fa-refresh font-weight-bold" aria-hidden="true"></i></p>
+        <h2>Otherwise, if you have searched and still see this, that means the entered Name doesn't exist amongst GitHub members</h2>
       </div>
     </div>
   </div>
@@ -28,10 +31,16 @@
             <img src="{{profile.avatar_url}}" alt="User Avatar" class="w-100 rounded-circle">
             <p *ngIf="profile.name" class="mx-1">Name: <span class="mx-1">{{profile.name}}</span></p>
           </div>
-          <div class=" text-justify">
-            <h4 *ngIf="profile.login" class="bg-light py-2 my-0 mx-1">Username: <span>{{profile.login}}</span></h4>
-            <a *ngIf="profile.email" class="lead my-0 py-1" href="emailto:{{profile.email}}" target="_blank">{{profile.email}}</a>
-            <a *ngIf="profile.blog" class="lead my-0 py-1" href="{{profile.blog}}" target="_blank"><span class="mx-2">Blog:</span>{{profile.blog}}</a>
+          <div class=" text-left">
+            <div *ngIf="profile.login !=undefined">
+              <h4 class="bg-light py-2 my-0 mx-1">Username: <span>{{profile.login}}</span></h4>
+            </div>
+            <div *ngIf="profile.email">
+              <a class="lead my-0 py-1" href="emailto:{{profile.email}}" target="_blank">{{profile.email}}</a>
+            </div>
+            <div *ngIf="profile.blog">
+              <a class="my-0 py-1" href="{{profile.blog}}" target="_blank">{{profile.blog}}</a>
+            </div>
           </div>
         </div>
       </div>
@@ -113,3 +122,4 @@
   </div>
 
 </div>
+<app-footer></app-footer>

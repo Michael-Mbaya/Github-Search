@@ -10,7 +10,7 @@ export class UsersComponent implements OnInit {
 
   profile;
   repos;
-  searchname;
+  searchname:string;
 
   constructor(private userService:UserServiceService) {
     
