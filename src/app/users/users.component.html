@@ -81,11 +81,14 @@
 
   </div>
   <div class="container-fluid d-flex flex-wrap justify-content-center">
-    <div class="col-md-3 my-1 mx-0 px-0" *ngFor="let repo of repos">
-      <div class=" card w-100">
+    <div class="col-md-3 card-deck my-1 mx-0 px-0" *ngFor="let repo of repos">
+      <div class=" card w-100 h-100">
         <div class="card-header">{{repo.name}}</div>
-        <div class="card-body">Content</div>
+        <div *ngIf="repo.description" class="card-body row justify-content-center align-items-center">{{repo.description}}</div>
+        <div *ngIf="!repo.description" class="card-body row justify-content-center align-items-center">No project Description Provided</div>
         <div class="card-footer">
+          <p class="text-left text-muted">Language: {{repo.language}}</p>
+          <p class="text-left text-muted">Last Update: {{repo.updated_at | date}}</p>
           <a href="{{repo.html_url}}" target="_blank" class="btn btn-sm btn-info">View on Github</a>
         </div>
       </div>

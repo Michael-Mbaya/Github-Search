@@ -57,3 +57,8 @@ div{
     margin: 0px;
     padding: 0px;
   }
+
+  .card-footer p, .card-footer a{
+    margin: 1px 0px;
+    padding: 1px 0px;
+  }
