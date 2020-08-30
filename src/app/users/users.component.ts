@@ -24,9 +24,26 @@ export class UsersComponent implements OnInit {
       this.repos = profileReposResult;
 
    });
+  }
+
+   search() {
+    this.userService.searchUsername(this.searchname);
+
+    this.userService.getUserInfo().subscribe(profileResult => {
+      console.log(profileResult);
+      this.profile = profileResult;
+    });
+
+    this.userService.getUserRepos().subscribe(profileReposResult => {
+      console.log(profileReposResult);
+      this.repos = profileReposResult;
+
+   });
+    this.searchname = '';
+  }
 
 
-}
+
   ngOnInit() {
   }
 }
