@@ -8,8 +8,8 @@ import { UserServiceService } from '../user-service.service';
 })
 export class UsersComponent implements OnInit {
 
-  profile;
-  repos;
+  profile:any;
+  repos:any;
   searchname:string;
 
   constructor(private userService:UserServiceService) {
@@ -42,8 +42,7 @@ export class UsersComponent implements OnInit {
     this.searchname = '';
   }
 
-
-
   ngOnInit() {
   }
+
 }

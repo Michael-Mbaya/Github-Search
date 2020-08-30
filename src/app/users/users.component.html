@@ -2,8 +2,8 @@
 
   <form (ngSubmit)="search()" class="pt-3">
     <div class="form-group">
-      <input type="text" class=" form-control" placeholder="Search GitHub by username" 
-        [(ngModel)]="searchname" name="searchname">
+      <input type="text" class=" form-control" placeholder="Search GitHub by username" [(ngModel)]="searchname"
+        name="searchname">
     </div>
     <div class="d-flex justify-content-center">
       <button class="btn btn-success w-25" value="submit" type="submit">
@@ -15,10 +15,12 @@
   <div class="container-fluid" *ngIf="!profile">
     <div class="jumbotron jumbotron-fluid bg-transparent">
       <div class="container text-center">
-        <h2>Please enter an existing Github User's name and click Enter or the Search button to see relevant Results</h2>
+        <h2>Please enter an existing Github User's name and click Enter or the Search button to see relevant Results
+        </h2>
         <h2>Alternatively, Check your Connection and Try again Please</h2>
         <p class="lead font-weight-bold"><i class="fa fa-refresh font-weight-bold" aria-hidden="true"></i></p>
-        <h2>Otherwise, if you have searched and still see this, that means the entered Name doesn't exist amongst GitHub members</h2>
+        <h2>Otherwise, if you have searched and still see this, that means the entered Name doesn't exist amongst GitHub
+          members</h2>
       </div>
     </div>
   </div>
@@ -32,13 +34,13 @@
             <p *ngIf="profile.name" class="mx-1">Name: <span class="mx-1">{{profile.name}}</span></p>
           </div>
           <div class=" text-left">
-            <div *ngIf="profile.login !=undefined">
-              <h4 class="bg-light py-2 my-0 mx-1">Username: <span>{{profile.login}}</span></h4>
+            <div *ngIf="profile.login">
+              <h4 class="bg-light py-2 my-0 mx-1 text-center">Username: <span>{{profile.login}}</span></h4>
             </div>
             <div *ngIf="profile.email">
               <a class="lead my-0 py-1" href="emailto:{{profile.email}}" target="_blank">{{profile.email}}</a>
             </div>
-            <div *ngIf="profile.blog">
+            <div *ngIf="profile.blog" class="text-center">
               <a class="my-0 py-1" href="{{profile.blog}}" target="_blank">{{profile.blog}}</a>
             </div>
           </div>
