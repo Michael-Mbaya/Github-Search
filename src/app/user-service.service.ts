@@ -16,6 +16,7 @@ export class UserServiceService {
   constructor(private http: HttpClient) {
     console.log("service up and go!!!");
     this.userName = '';
+    // this.userName = 'ertg'; //user with no public repos to see //test *ngIf in component
   }
 
   getUserInfo() {

@@ -8,12 +8,12 @@ import { UserServiceService } from '../user-service.service';
 })
 export class UsersComponent implements OnInit {
 
-  profile:any;
-  repos:any;
-  searchname:string;
+  profile: any;
+  repos: any;
+  searchname: string;
 
-  constructor(private userService:UserServiceService) {
-    
+  constructor(private userService: UserServiceService) {
+
     this.userService.getUserInfo().subscribe(profileResult => {
       console.log(profileResult);
       this.profile = profileResult;
@@ -23,10 +23,10 @@ export class UsersComponent implements OnInit {
       console.log(profileReposResult);
       this.repos = profileReposResult;
 
-   });
+    });
   }
 
-   search() {
+  search() {
     this.userService.searchUsername(this.searchname);
 
     this.userService.getUserInfo().subscribe(profileResult => {
@@ -38,7 +38,7 @@ export class UsersComponent implements OnInit {
       console.log(profileReposResult);
       this.repos = profileReposResult;
 
-   });
+    });
     this.searchname = '';
   }
 
