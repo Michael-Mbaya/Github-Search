@@ -76,7 +76,7 @@
               <p *ngIf="profile.twitter_username" class="lead my-0 py-1"><i class="fa fa-twitter text-primary mr-2"
                   aria-hidden="true"></i>@{{profile.twitter_username}}</p>
             </div>
-            <a href="{{profile.html_url}}" target="_blank" class="btn btn-primary">Go to Profile</a>
+            <a href="{{profile.html_url}}" target="_blank" class="btn bg-button">Go to Profile</a>
           </div>
           <div class="card-footer lead bg-dark text-white" *ngIf="profile.created_at">
             <span class="px-2">GitHub Member since: <i class="mx-2">{{profile.created_at|date}}</i></span>
@@ -87,7 +87,7 @@
 
   </div>
 
-  <div class="container-fluid" *ngIf="profile.public_repos">
+  <div class="container-fluid" *ngIf="profile.public_repos ==0">
     <div class="jumbotron jumbotron-fluid bg-transparent">
       <div class="container text-center">
         <h1 class="display-4">OOOOOOPS!<i class="fa fa-search-minus mx-2 text-danger" aria-hidden="true"></i></h1>
@@ -95,16 +95,17 @@
       </div>
     </div>
   </div>
-  <div class=" border border-success py-2" *ngIf=" (profile.public_repos > 0)">
+
+  <div class=" border border-success py-3 mb-3 flow" *ngIf=" (profile.public_repos > 0)">
 
     <div *ngIf=" profile.public_repos > 0 ">
       <h1 class="text-center text-uppercase lead">{{profile.login}}'s Repositories</h1>
     </div>
 
     <div class="container-fluid d-flex flex-wrap justify-content-center">
-      <div class="col-md-3 card-deck p-2 mx-0 px-0" *ngFor="let repo of repos">
+      <div class="col-md-4 col-sm-12 card-deck p-2 mx-0 px-0" *ngFor="let repo of repos">
 
-        <div class=" card w-100 h-100 m-2">
+        <div class="card w-100 h-100 m-2">
           <div class="card-header">{{repo.name}}</div>
           <div *ngIf="repo.description" class="card-body row justify-content-center align-items-center">
             {{repo.description}}</div>
