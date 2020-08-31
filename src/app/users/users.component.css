@@ -53,6 +53,13 @@ div{
   overflow-y: auto;
 }
 
+@media screen and (max-width: 768px) {
+.flow{
+  max-height:100%;
+  overflow-y: auto;
+}
+}
+
 /* unvisited link */
 a:link {
   color: blue;
